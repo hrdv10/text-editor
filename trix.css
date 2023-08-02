@@ -2,3 +2,31 @@
 @import "trix/stylesheets/toolbar";
 @import "trix/stylesheets/attachments";
 @import "trix/stylesheets/content";
+body {
+  background: #5d5d5d;
+}
+
+p {
+  font-family: roboto;
+}
+
+textarea {
+  background: #2d2d2d;
+  color: #7d7d7d;
+  width: 99%;
+  height: 623px;
+  border-color: transparent;
+  border-radius: 5px;
+  max-height: 623px;
+  max-width: 930px;
+  min-height: 200px;
+  min-width: 350px;
+}
+
+.buttons {
+  background-color: #3d3d3d;
+  color: #8d8d8d;
+  border-color: #8d8d8d;
+  border-width: 2px;
+  border-radius: 5px;
+}
