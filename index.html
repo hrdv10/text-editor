@@ -1,84 +1,9 @@
 
- 
-   <!doctype html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>hector</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="csp-nonce" content="topsecret">
-    <link rel="icon" href="data:,">
-    <link rel="stylesheet" type="text/css" href="trix.css">
-    <style type="text/css">
-      * {
-        box-sizing: border-box;
-      }
-
-      main {
-        margin: 20px auto;
-        max-width: 700px;
-      }
-
-      #output {
-        margin: 1rem 0 0;
-      }
-
-      #output textarea {
-        width: 100%;
-        height: 6rem;
-        resize: vertical;
-        font-family: monospace;
-        border-radius: 5px;
-        border: solid 1px #444;
-        padding: 10px;
-      }
-    </style>
-    <script type="module" src="hector.esm.js"></script>
-    <script type="module" src="inspector.js"></script>
-    <script type="module">
-      hector.config.attachments.preview.caption.name = true
-      hector.config.attachments.preview.caption.size = false
-
-      document.addEventListener("hector-initialize", function(event) {
-        hector.Inspector.install(event.target);
-      });
-
-      document.addEventListener("hector-attachment-add", function(event) {
-        var attachment = event.attachment;
-        if (attachment.file) {
-          var xhr = new XMLHttpRequest;
-          xhr.open("POST", "/attachments", true);
-
-          xhr.upload.onprogress = function(event) {
-            var progress = event.loaded / event.total * 100;
-            attachment.setUploadProgress(progress);
-          };
-
-          xhr.onload = function() {
-            if (xhr.status === 201) {
-              setTimeout(function() {
-                var url = xhr.responseText;
-                attachment.setAttributes({ url: url, href: url });
-              }, 30)
-            }
-          };
-
-          attachment.setUploadProgress(10);
-
-          setTimeout(function() {
-            xhr.send(attachment.file);
-          }, 30)
-        }
-      });
-    </script>
-  </head>
-  <body>
-    <main>
-      <hector-editor autofocus class="hector-content" input="input"></hector-editor>
-      <details id="output">
-        <summary>Output</summary>
-        <textarea readonly id="input"></textarea>
-      </details>
-    </main>
-  </body>
-</html>
+<body>
+  <textarea id='text' placeholder="Enter Your Text Here..." maxLength='1000'></textarea>
+  <p>Theme</p>
+  <input type="button" id="dark_mode" class="buttons" value="Dark Mode" onclick="switchToDark()"></input>
+  <input type="button" id="light_mode" class="buttons" value="Light Mode" onclick="switchToLight()"></input>
+<br><br><input type="button" id="load" value="Load" class="buttons"></input>
+<input type="button" id="save" value="Save" class="buttons"></input>
+</body>
