@@ -4,7 +4,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Trix</title>
+    <title>hector</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="csp-nonce" content="topsecret">
     <link rel="icon" href="data:,">
@@ -33,17 +33,17 @@
         padding: 10px;
       }
     </style>
-    <script type="module" src="trix.esm.js"></script>
+    <script type="module" src="hector.esm.js"></script>
     <script type="module" src="inspector.js"></script>
     <script type="module">
-      Trix.config.attachments.preview.caption.name = true
-      Trix.config.attachments.preview.caption.size = false
+      hector.config.attachments.preview.caption.name = true
+      hector.config.attachments.preview.caption.size = false
 
-      document.addEventListener("trix-initialize", function(event) {
-        Trix.Inspector.install(event.target);
+      document.addEventListener("hector-initialize", function(event) {
+        hector.Inspector.install(event.target);
       });
 
-      document.addEventListener("trix-attachment-add", function(event) {
+      document.addEventListener("hector-attachment-add", function(event) {
         var attachment = event.attachment;
         if (attachment.file) {
           var xhr = new XMLHttpRequest;
@@ -74,7 +74,7 @@
   </head>
   <body>
     <main>
-      <trix-editor autofocus class="trix-content" input="input"></trix-editor>
+      <hector-editor autofocus class="hector-content" input="input"></hector-editor>
       <details id="output">
         <summary>Output</summary>
         <textarea readonly id="input"></textarea>
