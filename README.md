@@ -1,6 +1,6 @@
 # text-editor
 Text Editor Project
-This is a simple text editor project built using [workflows, watchdog , HTML, CSS and  JavaScript].
+This is a simple text editor project built using [workflows, wathchdog , HTML, CSS and  JavaScript].
 
 
 Features
