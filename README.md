@@ -17,13 +17,9 @@ Clone the repository:
 
 bash
 Copy code
-git clone https://github.com/your-username/text-editor-project.git
-Navigate to the project directory:
+git clone https://github.com/hrdv10/text-editor-project.git
 
-bash
-Copy code
-cd text-editor-project
-Open index.html in your preferred web browser.
+
 
 Usage
 To create a new document, click the "New" button.
